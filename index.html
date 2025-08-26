@@ -3,154 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elisama Eluz | Nail Studio</title>
+    <title>Elisama Macoppi - Studio de Beleza Profissional</title>
+    <!-- Inclui a biblioteca Tailwind CSS para um design moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de fontes e cores personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        // Paleta de cores no estilo da imagem fornecida
+                        'primary': '#F0F0F0',
+                        'secondary': '#6B6B6B',
+                        'dark': '#1A1A1A',
+                        'light': '#FFFFFF',
+                        'accent': '#FF1493', /* Rosa vibrante */
+                        'soft-pink': '#FF8FAB',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Fonte e cores principais */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #F9F5F7;
-            color: #4B0082;
+        /* Importa as fontes do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;700&display=swap');
+        
+        /* Estilos para rolagem suave da página */
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Cabeçalho */
-        header {
-            background-color: #F3E5F5;
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 3px solid #FF69B4;
+        /* Efeito de hover suave para botões e links */
+        a, button {
+            transition: all 0.3s ease-in-out;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #4B0082;
+        /* Estilo para a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        header p {
-            font-size: 1.2em;
-            color: #D81B60;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
-
-        /* Seções */
-        section {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
+        ::-webkit-scrollbar-thumb {
+            background: #FF1493;
+            border-radius: 4px;
         }
-
-        section:nth-child(even) {
-            background-color: #FDEFF9;
-        }
-
-        h2 {
-            color: #4B0082;
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            text-align: center;
-            max-width: 800px;
-            margin: 10px auto 20px auto;
-        }
-
-        /* Botão de agendamento */
-        .btn-agendar {
-            display: inline-block;
-            background-color: #FF69B4;
-            color: white;
-            padding: 15px 35px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-agendar:hover {
-            background-color: #D81B60;
-        }
-
-        /* Galeria de fotos */
-        .galeria {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .galeria img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 3px solid #FF69B4;
-            transition: transform 0.3s ease;
-        }
-
-        .galeria img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #F3E5F5;
-            padding: 20px;
-            text-align: center;
-            color: #4B0082;
-            border-top: 3px solid #FF69B4;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C4006F;
         }
     </style>
 </head>
-<body>
+<body class="bg-primary font-sans text-dark leading-relaxed">
 
-    <!-- Cabeçalho -->
-    <header>
-        <h1>Elisama Eluz</h1>
-        <p>Seu Nail Studio de confiança</p>
-        <a href="#agenda" class="btn-agendar">Agende Sua Visita</a>
+    <!-- Seção do Cabeçalho e Navegação -->
+    <header class="bg-light shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold font-serif text-dark">Elisama Macoppi</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre" class="text-secondary hover:text-accent font-medium">Sobre Nós</a>
+                <a href="#servicos" class="text-secondary hover:text-accent font-medium">Serviços</a>
+                <a href="#galeria" class="text-secondary hover:text-accent font-medium">Galeria</a>
+                <a href="#depoimentos" class="text-secondary hover:text-accent font-medium">Depoimentos</a>
+                <a href="#contato" class="text-secondary hover:text-accent font-medium">Contato</a>
+            </div>
+            <a href="#contato" class="md:hidden bg-accent text-white py-2 px-6 rounded-full font-medium hover:bg-dark shadow-md">
+                Agendar
+            </a>
+        </nav>
     </header>
 
-    <!-- Sobre -->
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Com anos de experiência, oferecemos serviços de manicure e pedicure com qualidade, estilo e cuidado. Cada detalhe é pensado para você se sentir única.</p>
-    </section>
+    <main>
+        <!-- Seção de Boas-Vindas (Hero) -->
+        <section class="bg-light py-20 md:py-32 text-center relative overflow-hidden">
+            <div class="container mx-auto px-6 z-10 relative">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-dark leading-tight mb-4">
+                    Beleza e Carinho em Cada Detalhe
+                </h1>
+                <p class="text-lg md:text-2xl text-secondary mb-10 max-w-3xl mx-auto">
+                    Transforme sua beleza e realce sua essência com a expertise e dedicação que você merece.
+                </p>
+                <a href="#contato" class="bg-accent text-white text-xl font-medium py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 inline-block">
+                    Agende sua Transformação
+                </a>
+            </div>
+        </section>
 
-    <!-- Serviços -->
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <p>Manicure, Pedicure, Nail Art, Unhas em Gel e muito mais. Escolha o serviço que combina com você e realce sua beleza.</p>
-        <a href="#agenda" class="btn-agendar">Marcar Agora</a>
-    </section>
+        <!-- Seção Sobre Nós -->
+        <section id="sobre" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <!-- Foto de perfil da Elisama adicionada a partir do upload do usuário -->
+                    <img src="uploaded:60ece198-6db4-43ec-b005-45dbffe8ac39.jpg-5583b20b-3e9b-49ea-9335-c9e174e65ab0" alt="Foto de Elisama Macoppi" class="w-full max-w-md rounded-2xl shadow-2xl border-4 border-white transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Conheça Elisama Macoppi</h2>
+                    <p class="text-lg mb-4 text-secondary">
+                        Com mais de 7 anos de experiência, sou Elisama, uma profissional dedicada à beleza e ao bem-estar. Minha paixão é realçar a beleza natural de cada cliente, oferecendo um serviço que une técnica, carinho e produtos de alta qualidade.
+                    </p>
+                    <p class="text-lg text-secondary">
+                        Especialista em manicure, pedicure, designer de sobrancelhas e, agora, também em **aplicação de cílios**. Meu objetivo é que cada visita ao meu studio seja uma experiência relaxante e transformadora.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Galeria -->
-    <section id="galeria">
-        <h2>Galeria de Trabalhos</h2>
-        <div class="galeria">
-            <img src="img1.jpg" alt="Unha decorada 1">
-            <img src="img2.jpg" alt="Unha decorada 2">
-            <img src="img3.jpg" alt="Unha decorada 3">
-            <img src="img4.jpg" alt="Unha decorada 4">
-        </div>
-    </section>
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="bg-soft-pink py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-12">Nossos Serviços de Beleza</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cartão de Serviço: Manicure -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">💅</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Manicure e Pedicure</h3>
+                        <p class="text-secondary">
+                            Cutilagem e esmaltação impecável, com técnicas avançadas para durabilidade e saúde das suas unhas.
+                        </p>
+                    </div>
+                    <!-- Cartão de Serviço: Cílios -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">👁️</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Aplicação de Cílios</h3>
+                        <p class="text-secondary">
+                            Realce seu olhar com técnicas de extensão de cílios, criando um volume e comprimento naturais ou dramáticos.
+                        </p>
+                    </div>
+                    <!-- Cartão de Serviço: Blindagem -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">🛡️</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Blindagem de Unhas</h3>
+                        <p class="text-secondary">
+                            Técnica de fortalecimento que protege suas unhas naturais e prolonga a vida do esmalte.
+                        </p>
+                    </div>
+                    <!-- Cartão de Serviço: Unhas de Gel -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">💎</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Unhas de Gel</h3>
+                        <p class="text-secondary">
+                            Serviço de alongamento e manutenção, com acabamento perfeito e duradouro.
+                        </p>
+                    </div>
+                    <!-- Cartão de Serviço: Designer de Sobrancelhas -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">✍️</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Designer de Sobrancelhas</h3>
+                        <p class="text-secondary">
+                            Modelagem personalizada para realçar a moldura dos seus olhos de forma natural.
+                        </p>
+                    </div>
+                    <!-- Cartão de Serviço: Esmaltação Duradoura -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="text-accent text-5xl mb-4">🎨</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-dark">Esmaltação Duradoura</h3>
+                        <p class="text-secondary">
+                            Uso de esmaltes de alta qualidade para cores vibrantes e brilho intenso por mais tempo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contato / Agenda -->
-    <section id="agenda">
-        <h2>Agende Seu Horário</h2>
-        <p>Entre em contato pelo WhatsApp ou e-mail e garanta seu horário. Não perca tempo, as vagas são limitadas!</p>
-        <a href="https://wa.me/554991390083" class="btn-agendar">Agendar pelo WhatsApp</a>
-    </section>
+        <!-- Seção Galeria -->
+        <section id="galeria" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-12">Galeria de Trabalhos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Usando as novas imagens ajustadas enviadas pelo usuário -->
+                    <img src="uploaded:ea4209ce-4275-4a97-9d17-ca1efc53d6e3.jpg-7eb3ba8c-fa4f-4e74-b7b9-92f134d6f161" alt="Unhas com esmalte azul" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1A1A1A/FFFFFF?text=Unhas+Perfeitas';">
+                    <img src="uploaded:3a26e0de-1495-46ac-af2d-71c79d370783.jpg-156e1969-ff47-4ab7-b22e-d7407daa1389" alt="Unhas artísticas com detalhe de borboleta" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1A1A1A/FFFFFF?text=Arte+nas+Unhas';">
+                    <img src="uploaded:bec3c1d0-7eb6-49fa-a5a1-37dc305a9e43.jpg-3c7cfcc0-73f5-4581-8c8a-a2902ea11da7" alt="Perfil de Instagram da Elisama" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1A1A1A/FFFFFF?text=Foto+do+Studio';">
+                    <img src="https://placehold.co/600x400/FF1493/FFFFFF?text=Aplicação+de+Cílios" alt="Aplicação de cílios" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/FF1493/FFFFFF?text=Manicure+Clássica" alt="Manicure clássica" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/FF1493/FFFFFF?text=Unhas+com+Glitter" alt="Unhas com glitter" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/FF1493/FFFFFF?text=Pés+Hidratados" alt="Pés hidratados" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/FF1493/FFFFFF?text=Design+de+Sobrancelha" alt="Design de sobrancelha" class="w-full h-auto rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl transform hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Por que nos escolher -->
+        <section id="porque" class="bg-soft-pink py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-12">Por que Escolher a Elisama?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center text-center p-6 bg-light rounded-2xl shadow-lg">
+                        <div class="text-5xl text-accent mb-4">✨</div>
+                        <h3 class="text-2xl font-semibold mb-2 text-dark">Experiência e Profissionalismo</h3>
+                        <p class="text-secondary">Mais de 7 anos de dedicação e aprimoramento constante para oferecer o melhor resultado.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-light rounded-2xl shadow-lg">
+                        <div class="text-5xl text-accent mb-4">💖</div>
+                        <h3 class="text-2xl font-semibold mb-2 text-dark">Atendimento Personalizado</h3>
+                        <p class="text-secondary">Cada cliente é único. Nossos serviços são adaptados para atender às suas necessidades e estilo.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-light rounded-2xl shadow-lg">
+                        <div class="text-5xl text-accent mb-4">🌿</div>
+                        <h3 class="text-2xl font-semibold mb-2 text-dark">Produtos de Qualidade</h3>
+                        <p class="text-secondary">Utilizamos apenas produtos de marcas renomadas para garantir a saúde e a beleza de suas unhas e cílios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Depoimentos -->
+        <section id="depoimentos" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-12">O que nossas clientes dizem</h2>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-light p-8 rounded-2xl shadow-lg">
+                        <p class="text-lg text-secondary italic mb-4">"O trabalho da Elisama é impecável! Minhas unhas ficam perfeitas por semanas. O ambiente é super acolhedor e ela é muito atenciosa."</p>
+                        <p class="font-semibold text-dark">- Maria, cliente fiel</p>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-soft-pink p-8 rounded-2xl shadow-lg">
+                        <p class="text-lg text-secondary italic mb-4">"Fiz a aplicação de cílios e adorei o resultado! Super natural e durou muito. A Elisama é uma verdadeira artista."</p>
+                        <p class="font-semibold text-dark">- Ana, nova cliente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="bg-light py-16 md:py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Pronto para Agendar?</h2>
+                <p class="text-lg md:text-xl text-secondary mb-10 max-w-2xl mx-auto">
+                    Transforme sua beleza. Agende seu horário pelo WhatsApp ou siga-nos nas redes sociais.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <!-- Botão de WhatsApp -->
+                    <a href="https://wa.me/554991390083" class="bg-accent text-white py-4 px-10 rounded-full text-lg font-medium hover:bg-dark shadow-lg transition-colors transform hover:scale-105">
+                        WhatsApp
+                    </a>
+                    <!-- Botão de Instagram -->
+                    <a href="https://www.instagram.com/elisamacristina_studiohair" class="bg-accent text-white py-4 px-10 rounded-full text-lg font-medium hover:bg-dark shadow-lg transition-colors transform hover:scale-105">
+                        Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 Elisama Eluz | Todos os direitos reservados</p>
+    <footer class="bg-dark text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Elisama Macoppi. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>
