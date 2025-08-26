@@ -1,196 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elisama Eluz | Nail Art & Design Profissional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elisama Eluz | Nail Studio</title>
+    <style>
+        /* Fonte e cores principais */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #F9F5F7;
+            color: #4B0082;
+        }
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+        /* Cabeçalho */
+        header {
+            background-color: #F3E5F5;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #FF69B4;
+        }
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #4B0082;
+        }
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        header p {
+            font-size: 1.2em;
+            color: #D81B60;
+        }
 
-<style>
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FFF5F8; /* Branco rosado suave */
-    color: #4B3B50; /* Roxo escuro */
-}
-.font-serif { font-family: 'Playfair Display', serif; }
+        /* Seções */
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-/* Paleta manicure */
-.text-accent { color: #E89AB1; } /* Rosa */
-.text-secondary { color: #C9A66B; } /* Dourado suave */
-.bg-light { background-color: #FFF0F5; } /* Lilás/nude */
-.bg-dark { background-color: #4B3B50; } /* Roxo escuro */
-.btn-primary {
-    background-color: #E89AB1;
-    color: #fff;
-    transition: 0.3s;
-}
-.btn-primary:hover { background-color: #D17399; transform: translateY(-2px); }
-.btn-secondary {
-    border: 1px solid #E89AB1; color: #E89AB1;
-    transition: 0.3s;
-}
-.btn-secondary:hover {
-    background-color: #E89AB1; color: #fff;
-}
+        section:nth-child(even) {
+            background-color: #FDEFF9;
+        }
 
-/* Navegação */
-.nav-link { position: relative; text-decoration: none; }
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0; height: 1px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: #E89AB1;
-    transition: width 0.3s ease;
-}
-.nav-link:hover::after { width: 100%; left: 0; background: #E89AB1; }
+        h2 {
+            color: #4B0082;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-/* Animação */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-</style>
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 10px auto 20px auto;
+        }
+
+        /* Botão de agendamento */
+        .btn-agendar {
+            display: inline-block;
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-agendar:hover {
+            background-color: #D81B60;
+        }
+
+        /* Galeria de fotos */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .galeria img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #FF69B4;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #F3E5F5;
+            padding: 20px;
+            text-align: center;
+            color: #4B0082;
+            border-top: 3px solid #FF69B4;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body>
 
-<!-- Header -->
-<header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-<div class="container mx-auto px-6 py-4">
-<nav class="flex justify-between items-center">
-<a href="#" class="text-2xl font-serif font-semibold text-accent tracking-wider">Elisama Eluz</a>
-<div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide">
-<a href="#servicos" class="nav-link text-gray-600 hover:text-accent">Serviços</a>
-<a href="#portfolio" class="nav-link text-gray-600 hover:text-accent">Portfólio</a>
-<a href="#sobre" class="nav-link text-gray-600 hover:text-accent">Sobre</a>
-<a href="#contato" class="nav-link text-gray-600 hover:text-accent">Contato</a>
-</div>
-<a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="hidden md:inline-block btn-secondary py-2 px-5 rounded-full text-sm font-semibold">
-Agendar Horário
-</a>
-<button class="md:hidden text-2xl text-accent"><i class="fas fa-bars"></i></button>
-</nav>
-</div>
-</header>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Elisama Eluz</h1>
+        <p>Seu Nail Studio de confiança</p>
+        <a href="#agenda" class="btn-agendar">Agende Sua Visita</a>
+    </header>
 
-<!-- Hero -->
-<main>
-<section class="relative h-[85vh] flex items-center">
-<div class="absolute inset-0 bg-cover bg-center bg-fixed z-0" style="background-image: url('https://placehold.co/1920x1280/FFF0F5/E89AB1?text=Arte+em+Unhas');">
-<div class="absolute inset-0 bg-gradient-to-r from-white/80 to-white/10"></div>
-</div>
-<div class="container mx-auto px-6 relative z-10">
-<div class="max-w-xl text-left">
-<p class="text-secondary font-medium tracking-widest mb-4 fade-in-up">NAIL ART & DESIGN</p>
-<h1 class="text-5xl md:text-7xl font-serif text-accent leading-tight mb-6 fade-in-up delay-1">Arte em cada detalhe. Beleza que perdura.</h1>
-<p class="text-lg text-gray-600 mb-10 fade-in-up delay-2">Uma experiência exclusiva de cuidado e design, onde suas unhas se transformam em verdadeiras joias.</p>
-<a href="#servicos" class="btn-primary py-4 px-10 rounded-full font-semibold tracking-wide shadow-lg fade-in-up delay-3">
-Explorar Serviços
-</a>
-</div>
-</div>
-</section>
+    <!-- Sobre -->
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Com anos de experiência, oferecemos serviços de manicure e pedicure com qualidade, estilo e cuidado. Cada detalhe é pensado para você se sentir única.</p>
+    </section>
 
-<!-- Serviços -->
-<section id="servicos" class="py-24 bg-light">
-<div class="container mx-auto px-6">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<h2 class="text-4xl font-serif text-accent mb-4">Serviços Exclusivos</h2>
-<p class="text-gray-600">Cada procedimento é realizado com técnica apurada e produtos de alta qualidade, garantindo um resultado impecável e duradouro.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="border border-gray-200/80 p-8 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<i class="fas fa-hand-sparkles text-4xl text-secondary mb-5"></i>
-<h3 class="text-2xl font-serif font-semibold mb-3 text-accent">Manicure Premium</h3>
-<p class="text-gray-600">Tratamento completo com cutilagem, hidratação e esmaltação à sua escolha.</p>
-</div>
-<div class="border border-gray-200/80 p-8 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<i class="fas fa-gem text-4xl text-secondary mb-5"></i>
-<h3 class="text-2xl font-serif font-semibold mb-3 text-accent">Alongamento em Fibra</h3>
-<p class="text-gray-600">Estrutura fina, resistente e natural para unhas longas e elegantes.</p>
-</div>
-<div class="border border-gray-200/80 p-8 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-<i class="fas fa-palette text-4xl text-secondary mb-5"></i>
-<h3 class="text-2xl font-serif font-semibold mb-3 text-accent">Blindagem & Gel</h3>
-<p class="text-gray-600">Proteção, brilho e durabilidade para suas unhas naturais, com acabamento perfeito.</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- Serviços -->
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <p>Manicure, Pedicure, Nail Art, Unhas em Gel e muito mais. Escolha o serviço que combina com você e realce sua beleza.</p>
+        <a href="#agenda" class="btn-agendar">Marcar Agora</a>
+    </section>
 
-<!-- Portfólio -->
-<section id="portfolio" class="py-24 bg-white">
-<div class="container mx-auto px-6">
-<h2 class="text-4xl font-serif text-center text-accent mb-12">Portfólio</h2>
-<div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-<div class="overflow-hidden rounded-lg break-inside-avoid"><img class="w-full h-auto transform hover:scale-110 transition-transform duration-500" src="https://placehold.co/600x800/E89AB1/FFFFFF?text=Design+1" alt="Design 1"></div>
-<div class="overflow-hidden rounded-lg break-inside-avoid"><img class="w-full h-auto transform hover:scale-110 transition-transform duration-500" src="https://placehold.co/600x600/F5D0DC/4B3B50?text=Design+2" alt="Design 2"></div>
-<div class="overflow-hidden rounded-lg break-inside-avoid"><img class="w-full h-auto transform hover:scale-110 transition-transform duration-500" src="https://placehold.co/600x700/FFD1C1/4B3B50?text=Design+3" alt="Design 3"></div>
-<div class="overflow-hidden rounded-lg break-inside-avoid"><img class="w-full h-auto transform hover:scale-110 transition-transform duration-500" src="https://placehold.co/600x600/F5F1EE/E89AB1?text=Design+4" alt="Design 4"></div>
-</div>
-</div>
-</section>
+    <!-- Galeria -->
+    <section id="galeria">
+        <h2>Galeria de Trabalhos</h2>
+        <div class="galeria">
+            <img src="img1.jpg" alt="Unha decorada 1">
+            <img src="img2.jpg" alt="Unha decorada 2">
+            <img src="img3.jpg" alt="Unha decorada 3">
+            <img src="img4.jpg" alt="Unha decorada 4">
+        </div>
+    </section>
 
-<!-- Sobre -->
-<section id="sobre" class="py-24 bg-light">
-<div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 md:gap-20">
-<div class="md:w-5/12">
-<img src="https://placehold.co/500x600/F5F1EE/E89AB1?text=Elisama" alt="Elisama Cristina Eluz" class="rounded-lg shadow-xl w-full">
-</div>
-<div class="md:w-7/12">
-<h2 class="text-4xl font-serif text-accent mb-6">Minha paixão é realçar sua beleza.</h2>
-<p class="text-gray-600 leading-relaxed mb-4">
-Sou Elisama Eluz, especialista em nail design e apaixonada por transformar unhas em obras de arte. Cada cliente recebe uma experiência de autoestima e bem-estar.
-</p>
-<p class="text-gray-600 leading-relaxed mb-6">
-Minha filosofia: usar as melhores técnicas e produtos para criar resultados que refletem a personalidade de cada cliente.
-</p>
-</div>
-</div>
-</section>
+    <!-- Contato / Agenda -->
+    <section id="agenda">
+        <h2>Agende Seu Horário</h2>
+        <p>Entre em contato pelo WhatsApp ou e-mail e garanta seu horário. Não perca tempo, as vagas são limitadas!</p>
+        <a href="https://wa.me/554991390083" class="btn-agendar">Agendar pelo WhatsApp</a>
+    </section>
 
-<!-- Contato -->
-<section id="contato" class="py-24 bg-white">
-<div class="container mx-auto px-6 text-center">
-<h2 class="text-4xl font-serif text-accent mb-4">Vamos criar algo incrível juntas?</h2>
-<p class="max-w-2xl mx-auto text-gray-600 mb-10">Sua próxima experiência de beleza começa com um simples contato. Clique abaixo para agendar via WhatsApp.</p>
-<a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank" class="btn-primary py-4 px-12 rounded-full font-semibold tracking-wide shadow-lg inline-flex items-center gap-3">
-<i class="fab fa-whatsapp text-xl"></i> Agendar Agora
-</a>
-<div class="mt-16">
-<p class="text-sm tracking-widest text-gray-500 mb-4">ME SIGA NAS REDES SOCIAIS</p>
-<div class="flex justify-center space-x-8 text-2xl text-accent">
-<a href="#" class="hover:text-secondary transition-colors"><i class="fab fa-instagram"></i></a>
-<a href="#" class="hover:text-secondary transition-colors"><i class="fab fa-facebook"></i></a>
-<a href="#" class="hover:text-secondary transition-colors"><i class="fab fa-pinterest"></i></a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-accent text-white py-8">
-<div class="container mx-auto px-6 text-center text-white">
-<p class="text-sm">&copy; 2025 Elisama Eluz Nail Designer. Todos os direitos reservados.</p>
-<p class="text-xs mt-2">Desenvolvido com profissionalismo e carinho.</p>
-</div>
-</footer>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Elisama Eluz | Todos os direitos reservados</p>
+    </footer>
 
 </body>
 </html>
