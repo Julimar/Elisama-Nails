@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elisama Nails - Manicure & Beleza</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #ff99c8, #ff6f91);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5a;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      color: #ff6f91;
+      margin-bottom: 20px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .service-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 10px 0;
+    }
+    footer {
+      background: #ff6f91;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+    .whatsapp-float:hover {
+      background: #1ebe5a;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header>
+    <h1>Elisama Nails</h1>
+    <p>Beleza começa nas mãos — cuide-se com carinho!</p>
+    <a class="btn-whatsapp" href="https://wa.me/5599999999999?text=Olá%20quero%20agendar%20um%20horário%20no%20Elisama%20Nails" target="_blank">Agende seu horário</a>
+  </header>
+
+  <!-- SERVIÇOS -->
+  <section>
+    <h2>✨ Serviços</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Manicure & Pedicure</h3>
+        <p>Beleza clássica para suas mãos e pés.</p>
+        <strong>R$ 35</strong>
+      </div>
+      <div class="service-card">
+        <h3>Alongamento de Unhas</h3>
+        <p>Unhas perfeitas e duradouras.</p>
+        <strong>R$ 120</strong>
+      </div>
+      <div class="service-card">
+        <h3>Nail Art</h3>
+        <p>Designs criativos e modernos.</p>
+        <strong>R$ 15+</strong>
+      </div>
+      <div class="service-card">
+        <h3>Spa das Mãos e Pés</h3>
+        <p>Relaxamento e hidratação completa.</p>
+        <strong>R$ 60</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section>
+    <h2>💅 Galeria</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x400/ff99c8/ffffff?text=Unha+1" alt="Unha 1">
+      <img src="https://via.placeholder.com/300x400/ff6f91/ffffff?text=Unha+2" alt="Unha 2">
+      <img src="https://via.placeholder.com/300x400/fed7e2/333333?text=Unha+3" alt="Unha 3">
+      <img src="https://via.placeholder.com/300x400/fac1d9/333333?text=Unha+4" alt="Unha 4">
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section>
+    <h2>🌟 O que dizem as clientes</h2>
+    <div class="testimonial">
+      <p>“Melhor manicure da cidade! Minhas unhas nunca ficaram tão lindas.”</p>
+      <strong>- Ana Souza</strong>
+    </div>
+    <div class="testimonial">
+      <p>“Ambiente agradável e atendimento impecável. Super recomendo.”</p>
+      <strong>- Carla Mendes</strong>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section>
+    <h2>📍 Contato</h2>
+    <p>Endereço: Rua Exemplo, 123 - Centro</p>
+    <p>Instagram: <a href="https://instagram.com/" target="_blank">@elisamanails</a></p>
+    <a class="btn-whatsapp" href="https://wa.me/5599999999999?text=Olá%20quero%20agendar%20um%20horário%20no%20Elisama%20Nails" target="_blank">Agende no WhatsApp</a>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© 2025 Elisama Cristina Eluz Macoppi - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5599999999999?text=Olá%20quero%20agendar%20um%20horário%20no%20Elisama%20Nails" 
+     class="whatsapp-float" target="_blank">💬</a>
+
+</body>
+</html>
